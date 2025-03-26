@@ -9,7 +9,7 @@ export default {
       {
         mytheme: {
           
-        "primary": "#adc1e0",
+        "primary": "#1C293D",
                   
         "secondary": "#994e92",
                   
@@ -26,6 +26,10 @@ export default {
         "warning": "#22c55e",
                   
         "error": "#be185d",
+          },
+
+          darkTheme: {
+
           },
         },
       ],
