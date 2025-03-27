@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import InfoCard from './InfoCard';
 
 const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions, handleSuggestionClick, handleMenuClick, toggleDarkMode, isDarkMode }) => {
     return (
@@ -27,6 +28,8 @@ const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </div>
+
+        <div className="h-[93%] flex flex-col">
 
         <h1 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#1C293D]'}`}>Parker</h1>
 
@@ -56,6 +59,16 @@ const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions
             ))}
           </ul>
         )}
+
+        <div className="flex-1 overflow-auto mt-5">
+            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
+            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
+            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
+            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
+            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
+            
+        </div>
+        </div>
       </div>
     )
 }
