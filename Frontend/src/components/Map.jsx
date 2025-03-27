@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import parseWKT from '../helper/parse';
 
-const Map = ({ position }) => {
+const Map = ({ position, isDarkMode }) => {
   const [mapData, setMapData] = useState([]);
 
   useEffect(() => {
@@ -29,12 +29,17 @@ const Map = ({ position }) => {
     return null;
   };
 
+  const lightModeTileLayer =
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  const darkModeTileLayer =
+    "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"; 
+
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-0 m-0 p-0">
       <MapContainer center={position} zoom={13} className="w-full h-full">
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url={isDarkMode ? darkModeTileLayer : lightModeTileLayer}
         />
         {mapData.map((data, index) => (
           <Polygon key={index} positions={data.coordinates} />
