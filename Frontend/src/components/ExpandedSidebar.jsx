@@ -5,7 +5,7 @@ import InfoCard from './InfoCard';
 const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions, handleSuggestionClick, handleMenuClick, toggleDarkMode, isDarkMode }) => {
     return (
         <div className={`fixed top-5 bottom-5 left-5 h-[95%] w-[30%] bg-white shadow-lg p-5 rounded-xl z-10 border-2 transition-all duration-200
-        ${isDarkMode ? 'bg-[#1E1E1E] border-white' : 'bg-white border-[#1C293D]'
+        ${isDarkMode ? 'bg-primary border-white' : 'bg-white border-[#1C293D]'
             }`}>
         <div className='flex items-center justify-between w-full p-2'>
           <div className='flex space-x-4'>

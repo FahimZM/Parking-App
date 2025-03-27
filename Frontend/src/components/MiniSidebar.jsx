@@ -3,7 +3,7 @@ import React from "react";
 const MiniSidebar = ({handleMenuClick, toggleDarkMode, isDarkMode}) => {
     return (
         <div className={`fixed top-5 bottom-5 left-5 h-95% w-[70px] bg-white shadow-lg p-5 rounded-xl z-10 flex flex-col justify-between items-center transition-all duration-300 border-2 border-primary
-        ${isDarkMode ? 'bg-[#1E1E1E] border-white' : 'bg-white border-[#1C293D]'
+        ${isDarkMode ? 'bg-primary border-white' : 'bg-white border-[#1C293D]'
             }`}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={isDarkMode ? 'white' : '#1C293D'} className="size-6 cursor-pointer" onClick={handleMenuClick}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
