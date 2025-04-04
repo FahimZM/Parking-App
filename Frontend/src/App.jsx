@@ -12,7 +12,8 @@ function App() {
   return (
     <div className="relative w-screen h-screen">
       <Map position={position} isDarkMode={isDarkMode} />
-      <Sidebar setPosition={setPosition}
+      <Sidebar setPosition={setPosition} 
+      position={position}
       isDarkMode={isDarkMode}
       setIsDarkMode={setIsDarkMode} />
     </div>

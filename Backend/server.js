@@ -1,8 +1,12 @@
 import express from 'express';
 import axios from 'axios';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
+
 
 const PARKING_INVENTORY_API = "https://data.lacity.org/resource/s49e-q6j2.json";
 const PARKING_OCCUPANCY_API = "https://data.lacity.org/resource/e7h6-4a3e.json";
@@ -52,12 +56,12 @@ app.get('/parking', async (req, res) => {
                 distance: getDistance(userLat, userLong, parseFloat(entry.latlng.latitude), parseFloat(entry.latlng.longitude))
             }))
             .sort((a, b) => a.distance - b.distance)
-            .slice(0, 5); 
+            .slice(0, 10); 
 
 
 
         res.setHeader("Content-Type", "application/json");
-        res.send(JSON.stringify(closestData, null, 2));
+        res.send(closestData);
 
     } catch (error) {
         console.error("Error fetching data:", error);

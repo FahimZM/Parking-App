@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import InfoCard from './InfoCard';
 
-const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions, handleSuggestionClick, handleMenuClick, toggleDarkMode, isDarkMode }) => {
+const ExpandedSidebar = ({ setPosition, position, searchQuery, setSearchQuery, suggestions, handleSuggestionClick, handleMenuClick, toggleDarkMode, isDarkMode }) => {
+  
     return (
         <div className={`fixed top-5 bottom-5 left-5 h-[95%] w-[30%] bg-white shadow-lg p-5 rounded-xl z-10 border-2 transition-all duration-200
         ${isDarkMode ? 'bg-gray-900 border-white' : 'bg-white border-[#1C293D]'
@@ -61,12 +62,11 @@ const ExpandedSidebar = ({ setPosition, searchQuery, setSearchQuery, suggestions
         )}
 
         <div className="flex-1 overflow-auto mt-5">
-            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
-            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
-            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
-            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
-            <InfoCard name="test" location="LA" isDarkMode={isDarkMode}/>
-            
+            <InfoCard index = "1" location ={position} isDarkMode={isDarkMode}/>
+            <InfoCard index = "2" location ={position} isDarkMode={isDarkMode}/>
+            <InfoCard index = "3" location ={position} isDarkMode={isDarkMode}/>
+            <InfoCard index = "4" location ={position} isDarkMode={isDarkMode}/>
+
         </div>
         </div>
       </div>

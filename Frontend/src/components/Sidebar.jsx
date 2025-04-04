@@ -3,7 +3,7 @@ import axios from 'axios';
 import MiniSidebar from './MiniSidebar';
 import ExpandedSidebar from './ExpandedSidebar';
 
-const Sidebar = ({ setPosition, isDarkMode, setIsDarkMode }) => {
+const Sidebar = ({ setPosition, position, isDarkMode, setIsDarkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [isMinimized, setIsMinimized] = useState(false);
@@ -57,6 +57,7 @@ const Sidebar = ({ setPosition, isDarkMode, setIsDarkMode }) => {
 
       <ExpandedSidebar
       setPosition={setPosition}
+      position = {position}
       searchQuery={searchQuery}
       setSearchQuery={setSearchQuery}
       suggestions={suggestions}
