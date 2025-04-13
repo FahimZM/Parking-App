@@ -4,37 +4,37 @@ export default {
     "./index.html",
     "./src/**/*.{js,jsx}",
   ],
+  darkMode: 'class',
   daisyui: {
     themes: [
-      {
-        mytheme: {
+      "light", "dark"
+      // {
+      //   mytheme: {
           
-        "primary": "#1E1E1E",
+      //   "primary": "#1E1E1E",
                   
-        "secondary": "#994e92",
+      //   "secondary": "#994e92",
                   
-        "accent": "#515052",
+      //   "accent": "#515052",
                   
-        "neutral": "#0f4f69",
+      //   "neutral": "#0f4f69",
                   
-        "base-100": "#4e6c99",
+      //   "base-100": "#4e6c99",
                   
-        "info": "#515052",
+      //   "info": "#515052",
                   
-        "success": "#65a30d",
+      //   "success": "#65a30d",
                   
-        "warning": "#22c55e",
+      //   "warning": "#22c55e",
                   
-        "error": "#be185d",
+      //   "error": "#be185d",
 
-        "bgcustom":  "#1E1E1E"
-          },
-
-          darkTheme: {
-
-          },
-        },
+      //   "bgcustom":  "#1E1E1E"
+      //     },
+      //   },
+      
       ],
+      defaultTheme: 'light'
     },
   plugins: [
     require('daisyui'),

@@ -56,7 +56,7 @@ app.get('/parking', async (req, res) => {
                 distance: getDistance(userLat, userLong, parseFloat(entry.latlng.latitude), parseFloat(entry.latlng.longitude))
             }))
             .sort((a, b) => a.distance - b.distance)
-            .slice(0, 10); 
+            .slice(0, 4); 
 
 
 

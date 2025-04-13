@@ -5,17 +5,22 @@ import './App.css'
 import Sidebar from './components/Sidebar'
 import Map from './components/Map'
 
+
 function App() {
   const [position, setPosition] = useState([34.06, -118.28]); // Default Location (Los Angeles)
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+  const [parkingSpots, setParkingSpots] = useState([]);
+  
 
   return (
     <div className="relative w-screen h-screen">
-      <Map position={position} isDarkMode={isDarkMode} />
       <Sidebar setPosition={setPosition} 
       position={position}
       isDarkMode={isDarkMode}
-      setIsDarkMode={setIsDarkMode} />
+      setIsDarkMode={setIsDarkMode}
+      parkingSpots={parkingSpots}
+      setParkingSpots={setParkingSpots} />
+      <Map position={position} isDarkMode={isDarkMode} parkingSpots={parkingSpots} />
     </div>
   );
 }

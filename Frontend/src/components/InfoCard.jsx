@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const InfoCard = ({ index, location, isDarkMode }) => {
-  const [parkingSpots, setParkingSpots] = useState([]);
+const InfoCard = ({ index, location, isDarkMode, parkingSpots, setParkingSpots }) => {
   const [loading, setLoading] = useState(true); 
 
   const [lat, long] = location;
@@ -27,9 +26,7 @@ const InfoCard = ({ index, location, isDarkMode }) => {
   }, [lat, long]); 
 
   if (loading) {
-    return <div className={`p-4 rounded-lg shadow-md border border-gray-300 dark:border-gray-600
-    ${isDarkMode ? 'bg-[#1E1E1E] border-white' : 'bg-white border-[#1C293D]'
-      }`}v>Loading parking spots...</div>; 
+    return <div className={`p-4 rounded-lg shadow-md border bg-base-100 dark:bg-[#1E1E1E] dark:border-base-100 border-base-300`}v>Loading parking spots...</div>; 
   }
 
   const spot = parkingSpots[index]; 
@@ -40,11 +37,7 @@ const InfoCard = ({ index, location, isDarkMode }) => {
 
   return (
     <div
-    className={`p-4 rounded-lg shadow-md border
-      ${isDarkMode 
-        ? 'bg-[#1E1E1E] border-white text-white' 
-        : 'bg-white border-[#1C293D] text-black'
-      }`}
+    className={`p-4 rounded-lg shadow-md border bg-base-100 dark:bg-[#1E1E1E] text-base-content border-base-300 dark:border-white text-currentColor`}
   >
       <strong>{spot.blockface}</strong>
 
