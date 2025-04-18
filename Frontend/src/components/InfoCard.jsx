@@ -26,7 +26,7 @@ const InfoCard = ({ index, location, isDarkMode, parkingSpots, setParkingSpots }
   }, [lat, long]); 
 
   if (loading) {
-    return <div className={`p-4 rounded-lg shadow-md border bg-base-100 dark:bg-[#1E1E1E] dark:border-base-100 border-base-300`}v>Loading parking spots...</div>; 
+    return <div className={`p-4 rounded-lg shadow-md border bg-white dark:bg-[#1E1E1E] dark:border-base-100 border-base-300`}v>Loading parking spots...</div>; 
   }
 
   const spot = parkingSpots[index]; 
@@ -37,7 +37,8 @@ const InfoCard = ({ index, location, isDarkMode, parkingSpots, setParkingSpots }
 
   return (
     <div
-    className={`p-4 rounded-lg shadow-md border bg-base-100 dark:bg-[#1E1E1E] text-base-content border-base-300 dark:border-white text-currentColor`}
+    className={`p-4 rounded-lg shadow-md border bg-white dark:bg-[#1E1E1E] text-black dark:text-white border-gray-300 dark:border-white
+      `}
   >
       <strong>{spot.blockface}</strong>
 

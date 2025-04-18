@@ -30,15 +30,16 @@ const ExpandedSidebar = ({ setPosition, position, searchQuery, setSearchQuery, s
 
         <div className="h-[93%] flex flex-col">
 
-        <h1 className={`text-2xl font-bold mb-2 text-currentColor`}>Parker</h1>
+        <h1 className={`text-2xl font-bold mb-2 text-black dark:text-white`}>Parker</h1>
 
         <hr className={`border-t-2 border-gray-300 my-4 mx-auto w-5/6 dark:border-white`} />
 
-        <h2 className={`text-lg font-semibold mb-4 text-currentColor`}>Search Locations</h2>
+        <h2 className={`text-lg font-semibold mb-4 text-black dark:text-white`}>Search Locations</h2>
         <input 
           type="text"
           placeholder="Search for a place"
-          className={`w-full p-2 border rounded-md focus:outline-none focus:ring-2 dark:bg-[#1E1E1E] dark:text-white dark:border-white`}
+          className={`p-4 rounded-lg shadow-md border bg-white dark:bg-[#1E1E1E] text-black dark:text-white border-gray-300 dark:border-white
+    `}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
